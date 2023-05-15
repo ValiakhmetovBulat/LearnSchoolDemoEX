@@ -32,4 +32,9 @@ public partial class Client
     public virtual Gender Gender { get; set; } = null!;
 
     public virtual ClientTag Tag { get; set; } = null!;
+
+    public override string ToString()
+    {
+        return $"{LastName} {FirstName} {Surname}";
+    }
 }

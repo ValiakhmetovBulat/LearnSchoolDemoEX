@@ -15,11 +15,19 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Rectangle Fill="{StaticResource AdditionalBackgroundColor}"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        
+        <Rectangle Fill="{StaticResource AdditionalBackgroundColor}"></Rectangle>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Image Source="Resources/school_logo.png" Height="50" Margin="10"/>
+            <TextBlock Text="Школа языков Learn" FontSize="24" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <Rectangle Fill="{StaticResource AdditionalBackgroundColor}" Grid.Row="1"></Rectangle>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
             <StackPanel>
                 <TextBlock Text="Поиск:"/>
                 <TextBox x:Name="TextBoxSearchServices" Margin="10" TextChanged="TextBoxSearchServices_TextChanged"></TextBox>
@@ -35,7 +43,7 @@
             
         </StackPanel>
        
-        <ListView ScrollViewer.HorizontalScrollBarVisibility="Hidden" x:Name="listViewServices" HorizontalAlignment="Center" Grid.Row="1">
+        <ListView ScrollViewer.HorizontalScrollBarVisibility="Hidden" x:Name="listViewServices" HorizontalAlignment="Center" Grid.Row="2">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Vertical" HorizontalAlignment="Center"/>
@@ -85,10 +93,14 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Rectangle Fill="{StaticResource AdditionalBackgroundColor}" Grid.Row="2"/>
-        <StackPanel Grid.Row="2" HorizontalAlignment="Center">
-            <Button x:Name="ButtonAddService" Content="Добавить" Click="ButtonAddService_Click"/>
-            <TextBlock x:Name="TextBlockCountServices" TextAlignment="Center"></TextBlock>
+        <Rectangle Fill="{StaticResource AdditionalBackgroundColor}" Grid.Row="3"/>
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="ButtonAddService" Content="Добавить" Click="ButtonAddService_Click"/>
+                <Button x:Name="ButtonGoToClientServiceWindow" Click="ButtonGoToClientServiceWindow_Click" Content="Записать клиента на услугу" Width="300"/>
+                <Button x:Name="ButtonGoToIncomingServicesWindow" Click="ButtonGoToIncomingServicesWindow_Click" Content="Ближайшие записи"/>
+            </StackPanel>            
+            <TextBlock x:Name="TextBlockCountServices" TextAlignment="Center" ></TextBlock>
         </StackPanel>
         
     </Grid>

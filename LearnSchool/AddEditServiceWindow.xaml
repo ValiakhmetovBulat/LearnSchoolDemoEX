@@ -51,8 +51,7 @@
             <TextBlock Text="Идентификатор:"/>
             <TextBox Text="{Binding ServiceId}" IsReadOnly="True" x:Name="TextBoxServiceId"/>
         </StackPanel>
-        <Image Height="200" VerticalAlignment="Center" HorizontalAlignment="Center" Source="{Binding ServiceImageFromResources, FallbackValue={StaticResource NullImage}}" Grid.Row="2" Grid.RowSpan="3"/>
-        <Button Content="Изменить изображение" Grid.Row="5" Grid.Column="0" x:Name="ButtonChangeServiceImage" Click="ButtonChangeServiceImage_Click"/>
+        
         <Button Grid.Row="5" Grid.Column="1" Content="Вернуться" x:Name="ButtonGoBack" Click="ButtonGoBack_Click"/>
         <Button Grid.Row="4" Grid.Column="1" Content="Сохранить" x:Name="ButtonSave" Click="ButtonSave_Click"/>        
     </Grid>

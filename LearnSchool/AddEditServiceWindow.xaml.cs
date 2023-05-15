@@ -106,7 +106,7 @@ namespace LearnSchool
             dialog.Multiselect = false;
             if (dialog.ShowDialog() == true)
             {
-                File.Copy(dialog.FileName, @$"Resources\{_service.ServiceName}.jpg");
+                
             }
         }
     }

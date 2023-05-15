@@ -186,5 +186,32 @@ namespace LearnSchool
         {
             TextBlockCountServices.Text = services.Count.ToString() + " из " + _services.Count.ToString();
         }
+
+        private void ButtonGoToClientServiceWindow_Click(object sender, RoutedEventArgs e)
+        {
+            if (listViewServices.SelectedItems.Count == 0) 
+            {
+                MessageBox.Show("Выберете услугу для записи нажамием на карточку");
+                return;
+            }
+            if (listViewServices.SelectedItems.Count > 1) 
+            {
+                MessageBox.Show("Одновременно можно записывать только на одну услугу");
+                return;
+            }
+
+            var selectedService = listViewServices.SelectedItems.Cast<Service>().FirstOrDefault();
+
+            ClientServiceWindow clientServiceWindow = new ClientServiceWindow(selectedService);
+            clientServiceWindow.Show();
+            this.Close();
+        }
+
+        private void ButtonGoToIncomingServicesWindow_Click(object sender, RoutedEventArgs e)
+        {
+            IncomingServicesWindow incomingServicesWindow = new IncomingServicesWindow();
+            incomingServicesWindow.Show();
+            this.Close();
+        }
     }
 }
